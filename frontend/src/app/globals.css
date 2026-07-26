@@ -1,0 +1,143 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 240 10% 6%;
+    --card-foreground: 0 0% 98%;
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 43 70% 50%;
+    --primary-foreground: 0 0% 0%;
+    --secondary: 240 4.8% 95.9%;
+    --secondary-foreground: 240 5.9% 10%;
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+    --accent: 43 70% 40%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 43 70% 50%;
+    --radius: 0.75rem;
+  }
+}
+
+body {
+  background-color: #080809;
+  color: #f3f4f6;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  overflow-x: hidden;
+}
+
+/* Premium Gold Text Effects */
+.text-gold {
+  color: #D4AF37;
+  background: linear-gradient(135deg, #FFF6D1 0%, #D4AF37 50%, #AA7C11 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gold-gradient {
+  background: linear-gradient(90deg, #F3E5AB 0%, #D4AF37 50%, #B8860B 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.bg-gold-gradient {
+  background: linear-gradient(135deg, #FFE259 0%, #FFA751 100%);
+}
+
+.bg-black-gold-gradient {
+  background: linear-gradient(180deg, #121214 0%, #080809 100%);
+}
+
+/* Glassmorphic Cards */
+.glass-card {
+  background: rgba(20, 20, 22, 0.65);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(212, 175, 55, 0.12);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-card:hover {
+  border-color: rgba(212, 175, 55, 0.25);
+  box-shadow: 0 12px 40px 0 rgba(212, 175, 55, 0.05);
+}
+
+/* Active Glowing gold border */
+.gold-glow {
+  box-shadow: 0 0 15px rgba(212, 175, 55, 0.15);
+}
+
+.gold-glow-pulse {
+  animation: gold-pulse 2s infinite alternate;
+}
+
+@keyframes gold-pulse {
+  0% {
+    box-shadow: 0 0 5px rgba(212, 175, 55, 0.1);
+    border-color: rgba(212, 175, 55, 0.15);
+  }
+  100% {
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
+    border-color: rgba(212, 175, 55, 0.5);
+  }
+}
+
+/* Scrollbars styling */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #080809;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(212, 175, 55, 0.25);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(212, 175, 55, 0.5);
+}
+
+/* Custom dashboard tables */
+.custom-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 8px;
+}
+
+.custom-table tr {
+  background: rgba(20, 20, 22, 0.4);
+  transition: all 0.2s ease;
+}
+
+.custom-table tr:hover {
+  background: rgba(212, 175, 55, 0.04);
+}
+
+.custom-table td, .custom-table th {
+  padding: 12px 16px;
+  border-top: 1px solid rgba(212, 175, 55, 0.05);
+  border-bottom: 1px solid rgba(212, 175, 55, 0.05);
+}
+
+.custom-table td:first-child, .custom-table th:first-child {
+  border-left: 1px solid rgba(212, 175, 55, 0.05);
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+}
+
+.custom-table td:last-child, .custom-table th:last-child {
+  border-right: 1px solid rgba(212, 175, 55, 0.05);
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
